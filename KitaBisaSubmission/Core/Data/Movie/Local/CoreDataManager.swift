@@ -15,18 +15,8 @@ protocol CoreDataManagerProtocol {
 }
 
 class CoreDataManager: CoreDataManagerProtocol {
-   
-    lazy var persistentconteiner: NSPersistentContainer = {
-        let persistentconteiner  = NSPersistentContainer(name: "KitaBisaSubmission")
-        persistentconteiner.loadPersistentStores { _, _ in
-            
-        }
-        return persistentconteiner
-    }()
-    
-    var moc: NSManagedObjectContext {
-        persistentconteiner.viewContext
-    }
+
+    var moc = CoreDataHelper().moc
     
     func fetchPartData(result: Result, complition: @escaping (Bool) -> Void) {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Movie")
@@ -95,8 +85,8 @@ class CoreDataManager: CoreDataManagerProtocol {
         request.predicate = predicate
         
         do {
-            let test = try moc.fetch(request)
-            let objectdelete = (test[0] as? NSManagedObject)!
+            let fetch = try moc.fetch(request)
+            let objectdelete = (fetch[0] as? NSManagedObject)!
             moc.delete(objectdelete)
             do {
                 try moc.save()

@@ -7,10 +7,11 @@
 
 import Foundation
 import XCTest
+import CoreData
 @testable import KitaBisaSubmission
 
 class MovieViewModelTest: XCTestCase {
-
+    
     func test_TopListViewModel_whenProvideData_thenCountOneItem() {
         
         // given
@@ -26,7 +27,7 @@ class MovieViewModelTest: XCTestCase {
         // then
         XCTAssertEqual(viewModel.list.value?.count, 1)
     }
-
+    
     func test_TopListViewModel_whenProvideEmptyData_thenZeroItem() {
 
         // given

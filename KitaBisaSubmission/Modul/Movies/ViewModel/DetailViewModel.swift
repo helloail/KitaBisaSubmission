@@ -45,9 +45,6 @@ class DetailViewModel: DetailViewModelProtocol {
             } else {
                 self?.getstatus.value = false
             }
-    
         }
-
     }
-    
 }

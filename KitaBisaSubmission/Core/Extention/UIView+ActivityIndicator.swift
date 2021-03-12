@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 extension UIView {
-
     func activityStartAnimating(activityColor: UIColor, backgroundColor: UIColor) {
         let backgroundView = UIView()
         backgroundView.frame = CGRect.init(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height)
