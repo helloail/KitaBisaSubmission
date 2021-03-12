@@ -44,7 +44,6 @@ class CoreDataManager: CoreDataManagerProtocol {
         } catch {
             fatalError("Failed to fetch employees: \(error)")
         }
-        
     }
     
     func updateData(result: Result) {
@@ -55,7 +54,6 @@ class CoreDataManager: CoreDataManagerProtocol {
             } else {
                 self?.saveDataMovie(result: result)
             }
-            
         }
     }
     
@@ -88,9 +86,7 @@ class CoreDataManager: CoreDataManagerProtocol {
             
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
-            
         }
-        
     }
     
     private func deleteMovie(title: String) {
@@ -113,5 +109,4 @@ class CoreDataManager: CoreDataManagerProtocol {
             print(error)
         }
     }
-    
 }

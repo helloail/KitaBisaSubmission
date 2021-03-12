@@ -42,14 +42,9 @@ class MovieRemoteDataSource: MovieRemoteDataSourceProtocol {
                 let posts = try JSON().newJSONDecoder().decode(MoviedModel.self, from: data)
                 completion(.success(posts))
             } catch let error {
-                
-                print(error)
-                
+                completion(.failure(error))
             }
             return
-            
         }.resume()
-        
     }
-    
 }

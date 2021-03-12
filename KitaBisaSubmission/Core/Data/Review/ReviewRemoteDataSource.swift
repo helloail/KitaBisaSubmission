@@ -42,14 +42,10 @@ class ReviewsRemoteDataSource: ReviewsRemoteDataSourceProtocol {
         
                 completion(.success(posts))
             } catch let error {
-                
-                print(error)
+                completion(.failure(error))
                 
             }
             return
-            
         }.resume()
-        
     }
-    
 }
