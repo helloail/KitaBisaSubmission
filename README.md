@@ -1,4 +1,4 @@
 # KitaBisaSubmission
 
-Architchtureb : MVVM
+Architchtureb : MVVM,
 CI : Github Action
