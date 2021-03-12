@@ -40,14 +40,14 @@ class MovieDetailViewController: UIViewController {
         registerDetailListCell()
         setinit()
         
-        reviewlistViewModel.didload((moviedata?.id)!)
-        detailistViewModel.didload(moviedata!)
+        reviewlistViewModel.didload(moviedata?.id ?? 0)
+        detailistViewModel.didload(moviedata ?? Result())
         
     }
     
     @IBAction func favoriteAction(_ sender: Any) {
         self.detailistViewModel.updateStatus(moviedata!)
-        detailistViewModel.didload(moviedata!)
+        self.detailistViewModel.didload(moviedata!)
     }
 }
 

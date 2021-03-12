@@ -51,6 +51,7 @@
 		14E17DC825FB322B00942111 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E17DC725FB322B00942111 /* CoreDataHelper.swift */; };
 		14E17DCD25FB32AD00942111 /* MockMovieLocaleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E17DCC25FB32AD00942111 /* MockMovieLocaleDataSource.swift */; };
 		14E17DDD25FB336700942111 /* FavoriteViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E17DDC25FB336700942111 /* FavoriteViewModelTest.swift */; };
+		14E17E1025FB763500942111 /* NoItemViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E17E0F25FB763500942111 /* NoItemViewControllerTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		14E17DC725FB322B00942111 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		14E17DCC25FB32AD00942111 /* MockMovieLocaleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMovieLocaleDataSource.swift; sourceTree = "<group>"; };
 		14E17DDC25FB336700942111 /* FavoriteViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModelTest.swift; sourceTree = "<group>"; };
+		14E17E0F25FB763500942111 /* NoItemViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoItemViewControllerTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 				14E17DDC25FB336700942111 /* FavoriteViewModelTest.swift */,
 				14E17D9D25FADC0E00942111 /* MovieVIewModelTest.swift */,
 				14E17DA525FADF2B00942111 /* ReviewViewModelTest.swift */,
+				14E17E0F25FB763500942111 /* NoItemViewControllerTest.swift */,
 				14DD45CD25F834470052D08C /* Info.plist */,
 			);
 			path = KitaBisaSubmissionTests;
@@ -714,6 +717,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14E17D7225FA602800942111 /* MockReviewMovieDataSource.swift in Sources */,
+				14E17E1025FB763500942111 /* NoItemViewControllerTest.swift in Sources */,
 				14E17D7D25FA60EC00942111 /* MockReviewResponse.swift in Sources */,
 				14E17DDD25FB336700942111 /* FavoriteViewModelTest.swift in Sources */,
 				14E17D8325FA62DF00942111 /* MockMovieResponse.swift in Sources */,

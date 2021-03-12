@@ -20,7 +20,7 @@ class CoreDataManager: CoreDataManagerProtocol {
     
     func fetchPartData(result: Result, complition: @escaping (Bool) -> Void) {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Movie")
-        let predicate = NSPredicate(format: "title == %@", result.title!)
+        let predicate = NSPredicate(format: "title == %@", result.title ?? "")
         
         request.predicate = predicate
         

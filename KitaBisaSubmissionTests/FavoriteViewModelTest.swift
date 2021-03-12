@@ -24,9 +24,7 @@ class FavoriteViewModelTest: XCTestCase {
         viewmodel.didload()
         
         // then
-        
         XCTAssertEqual(viewmodel.list.value?.count, 1)
-        
     }
     
     func test_TopListViewModel_whenProvideErrorResponse_thenError() {
@@ -43,5 +41,4 @@ class FavoriteViewModelTest: XCTestCase {
         // then
         XCTAssertNotNil(viewModel.errorMessage)
     }
-
 }
