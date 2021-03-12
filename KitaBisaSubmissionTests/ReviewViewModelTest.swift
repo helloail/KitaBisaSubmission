@@ -21,7 +21,7 @@ class ReviewViewModelTest: XCTestCase {
         // when
         
         service.catchdataStatus = .success(expectedData)
-        viewModel.fetchArticleExecute(key: 1)
+        viewModel.didload(1)
         
         // then
         XCTAssertEqual(viewModel.list.value?.count, 1)
@@ -36,7 +36,7 @@ class ReviewViewModelTest: XCTestCase {
 
         // when
         service.catchdataStatus = .success(expectedData)
-        viewModel.fetchArticleExecute(key: 1)
+        viewModel.didload(1)
 
         // then
         XCTAssertEqual(viewModel.list.value?.count, 0)
@@ -54,7 +54,7 @@ class ReviewViewModelTest: XCTestCase {
         
         // when
         service.catchdataStatus = .success(expecteddata)
-        viewModel.fetchArticleExecute(key: 1)
+        viewModel.didload(1)
         
         // then
         XCTAssertEqual(viewModel.list.value?.count, 0)
@@ -69,7 +69,7 @@ class ReviewViewModelTest: XCTestCase {
         let viewModel = ReviewViewModel(reviewservice: service)
         
         // when
-        viewModel.fetchArticleExecute(key: 1)
+        viewModel.didload(1)
         
         // then
         XCTAssertNotNil(viewModel.errorMessage)

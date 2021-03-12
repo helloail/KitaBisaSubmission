@@ -21,7 +21,7 @@ class MovieViewModelTest: XCTestCase {
         // when
         
         service.catchdataStatus = .success(expectedData)
-        viewModel.fetchArticleExecute(key: "")
+        viewModel.didload("")
         
         // then
         XCTAssertEqual(viewModel.list.value?.count, 1)
@@ -36,7 +36,7 @@ class MovieViewModelTest: XCTestCase {
 
         // when
         service.catchdataStatus = .success(expectedData)
-        viewModel.fetchArticleExecute(key: "")
+        viewModel.didload("")
 
         // then
         XCTAssertEqual(viewModel.list.value?.count, 0)
@@ -54,7 +54,7 @@ class MovieViewModelTest: XCTestCase {
         
         // when
         service.catchdataStatus = .success(expecteddata)
-        viewModel.fetchArticleExecute(key: "")
+        viewModel.didload("")
         
         // then
         XCTAssertEqual(viewModel.list.value?.count, 0)
@@ -69,7 +69,7 @@ class MovieViewModelTest: XCTestCase {
         let viewModel = MovieViewModel(movieservice: service)
         
         // when
-        viewModel.fetchArticleExecute(key: "")
+        viewModel.didload("")
         
         // then
         XCTAssertNotNil(viewModel.errorMessage)
