@@ -21,7 +21,7 @@ protocol DetailViewModelProtocol: DetailViewModelsoutput, DetailViewModelsinput 
 class DetailViewModel: DetailViewModelProtocol {
     
     func didload(_ result: Result) {
-        fetchArticleExecute(result: result)
+        fetchData(result: result)
     }
     
     private var movieservice: CoreDataManagerProtocol
@@ -33,7 +33,7 @@ class DetailViewModel: DetailViewModelProtocol {
     func updateStatus(_ result: Result) {
         self.movieservice.updateData(result: result)
     }
-    func fetchArticleExecute(result: Result) {
+    func fetchData(result: Result) {
         
         self.movieservice.fetchPartData(result: result) {[weak self] bool in
             

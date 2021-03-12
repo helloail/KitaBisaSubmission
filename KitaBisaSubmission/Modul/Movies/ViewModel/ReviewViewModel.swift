@@ -21,7 +21,7 @@ protocol ReviewViewModelProtocol: ReviewViewModelsinput, ReviewViewModelsoutput 
 
 class ReviewViewModel: ReviewViewModelProtocol {
     func didload(_ key: Int) {
-        fetchArticleExecute(key: key)
+        fetchData(key: key)
     }
     
     private var reviewservice: ReviewsRemoteDataSourceProtocol
@@ -31,7 +31,7 @@ class ReviewViewModel: ReviewViewModelProtocol {
         self.reviewservice = reviewservice
     }
     
-    func fetchArticleExecute(key: Int) {
+    func fetchData(key: Int) {
         loading.value = true
         
         self.reviewservice.catchReviewList(key: key) { [weak self] result in

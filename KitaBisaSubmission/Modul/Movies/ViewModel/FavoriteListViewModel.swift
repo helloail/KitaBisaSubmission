@@ -29,7 +29,7 @@ protocol FavoriteViewModelProtocol: FavoriteViewModelsinput, FavoriteViewModelso
 class FavoriteViewModel: FavoriteViewModelProtocol {
    
     func didload() {
-        fetchArticleExecute()
+        fetchData()
     }
     
     private var movieservice: CoreDataManagerProtocol
@@ -39,7 +39,7 @@ class FavoriteViewModel: FavoriteViewModelProtocol {
         self.movieservice = movieservice
     }
     
-    func fetchArticleExecute() {
+    func fetchData() {
         loading.value = true
         
         self.movieservice.fetchMovies { [weak self] result in

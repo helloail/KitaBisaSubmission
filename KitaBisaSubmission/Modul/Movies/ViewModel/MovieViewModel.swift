@@ -29,7 +29,7 @@ protocol MovieViewModelProtocol: MovieViewModelsinput, MovieViewModelsoutput { }
 
 class MovieViewModel: MovieViewModelProtocol {
     func didload(_ key: String) {
-        fetchArticleExecute(key: key)
+        fetchData(key: key)
     }
     
     private var movieservice: MovieRemoteDataSourceProtocol
@@ -39,7 +39,7 @@ class MovieViewModel: MovieViewModelProtocol {
         self.movieservice  = movieservice
     }
     
-    func fetchArticleExecute(key: String) {
+    func fetchData(key: String) {
         loading.value = true
 
         self.movieservice.catchMoviesList(key: key) { [weak self] result in
