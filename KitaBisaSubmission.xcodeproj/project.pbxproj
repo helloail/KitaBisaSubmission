@@ -172,14 +172,10 @@
 		14DD45B025F834470052D08C /* KitaBisaSubmission */ = {
 			isa = PBXGroup;
 			children = (
+				14E17DFD25FB3A0800942111 /* App */,
+				14E17DFC25FB39F800942111 /* SupportingFiles */,
 				14DD461625F845370052D08C /* Modul */,
 				14DD45E725F8346D0052D08C /* Core */,
-				14DD45B125F834470052D08C /* AppDelegate.swift */,
-				14DD45B325F834470052D08C /* SceneDelegate.swift */,
-				14DD45BD25F834470052D08C /* Assets.xcassets */,
-				14DD45BF25F834470052D08C /* LaunchScreen.storyboard */,
-				14DD45C225F834470052D08C /* Info.plist */,
-				14DD45BA25F834470052D08C /* KitaBisaSubmission.xcdatamodeld */,
 			);
 			path = KitaBisaSubmission;
 			sourceTree = "<group>";
@@ -265,8 +261,11 @@
 		14DD461725F845D60052D08C /* Movies */ = {
 			isa = PBXGroup;
 			children = (
-				14DD463525F84CA30052D08C /* Views */,
-				14DD461825F845E50052D08C /* ViewModel */,
+				14E17DF525FB398000942111 /* NoItem */,
+				14E17DE925FB386400942111 /* Review */,
+				14E17DE525FB381700942111 /* Favorite */,
+				14E17DE425FB381000942111 /* Home */,
+				14E17DE625FB381E00942111 /* Detail */,
 			);
 			path = Movies;
 			sourceTree = "<group>";
@@ -274,10 +273,7 @@
 		14DD461825F845E50052D08C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				14DD461925F845F20052D08C /* MovieViewModel.swift */,
 				14E17CF925F8CD9C00942111 /* ReviewViewModel.swift */,
-				14E17D4025F9D8EF00942111 /* FavoriteListViewModel.swift */,
-				14E17D5525FA007A00942111 /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -297,41 +293,6 @@
 				14DD45F525F83EE90052D08C /* JSON.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		14DD463525F84CA30052D08C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				14DD463725F84D370052D08C /* LayoutView */,
-				14DD463625F84D110052D08C /* ControllersView */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		14DD463625F84D110052D08C /* ControllersView */ = {
-			isa = PBXGroup;
-			children = (
-				14E17CCC25F8B73200942111 /* ReviewsTableViewCell.swift */,
-				14DD464325F84FE90052D08C /* MovieTableViewCell.swift */,
-				14DD465F25F863210052D08C /* MovieListViewController.swift */,
-				14E17CEE25F8C4C900942111 /* MovieDetailViewController.swift */,
-				14E17D3B25F9B0D300942111 /* MovieFavoriteViewController.swift */,
-				14E17D4A25F9F19E00942111 /* NoItemMovieViewController.swift */,
-			);
-			path = ControllersView;
-			sourceTree = "<group>";
-		};
-		14DD463725F84D370052D08C /* LayoutView */ = {
-			isa = PBXGroup;
-			children = (
-				14DD45B725F834470052D08C /* Main.storyboard */,
-				14DD464425F84FE90052D08C /* MovieTableViewCell.xib */,
-				14E17CC725F8ADFE00942111 /* MovieDetails.storyboard */,
-				14E17CCD25F8B73200942111 /* ReviewsTableViewCell.xib */,
-				14E17D3625F9B0B000942111 /* Favorite.storyboard */,
-				14E17D4525F9EF5000942111 /* NoItem.storyboard */,
-			);
-			path = LayoutView;
 			sourceTree = "<group>";
 		};
 		14DD465025F85E6E0052D08C /* Extention */ = {
@@ -386,6 +347,181 @@
 				14E17DC725FB322B00942111 /* CoreDataHelper.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		14E17DE425FB381000942111 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				14E17DEE25FB390D00942111 /* Controller */,
+				14E17DED25FB38FE00942111 /* View */,
+				14E17DE725FB383F00942111 /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		14E17DE525FB381700942111 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				14E17DEC25FB38E400942111 /* Controller */,
+				14E17DEB25FB38CB00942111 /* View */,
+				14E17DEA25FB387100942111 /* ViewModel */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		14E17DE625FB381E00942111 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				14E17DF325FB393200942111 /* Controller */,
+				14E17DF225FB392000942111 /* View */,
+				14E17DE825FB384E00942111 /* ViewModel */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		14E17DE725FB383F00942111 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				14DD461925F845F20052D08C /* MovieViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		14E17DE825FB384E00942111 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				14E17D5525FA007A00942111 /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		14E17DE925FB386400942111 /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				14E17DF825FB399F00942111 /* Controller */,
+				14E17DF425FB395000942111 /* View */,
+				14DD461825F845E50052D08C /* ViewModel */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
+		14E17DEA25FB387100942111 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				14E17D4025F9D8EF00942111 /* FavoriteListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		14E17DEB25FB38CB00942111 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14E17D3625F9B0B000942111 /* Favorite.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14E17DEC25FB38E400942111 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				14E17D3B25F9B0D300942111 /* MovieFavoriteViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		14E17DED25FB38FE00942111 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14DD464425F84FE90052D08C /* MovieTableViewCell.xib */,
+				14DD45B725F834470052D08C /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		14E17DEE25FB390D00942111 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				14DD464325F84FE90052D08C /* MovieTableViewCell.swift */,
+				14DD465F25F863210052D08C /* MovieListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		14E17DF225FB392000942111 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14E17CC725F8ADFE00942111 /* MovieDetails.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14E17DF325FB393200942111 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				14E17CEE25F8C4C900942111 /* MovieDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		14E17DF425FB395000942111 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14E17CCD25F8B73200942111 /* ReviewsTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14E17DF525FB398000942111 /* NoItem */ = {
+			isa = PBXGroup;
+			children = (
+				14E17DF725FB398B00942111 /* Controller */,
+				14E17DF625FB398600942111 /* View */,
+			);
+			path = NoItem;
+			sourceTree = "<group>";
+		};
+		14E17DF625FB398600942111 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14E17D4525F9EF5000942111 /* NoItem.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14E17DF725FB398B00942111 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				14E17D4A25F9F19E00942111 /* NoItemMovieViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		14E17DF825FB399F00942111 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				14E17CCC25F8B73200942111 /* ReviewsTableViewCell.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		14E17DFC25FB39F800942111 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				14DD45BA25F834470052D08C /* KitaBisaSubmission.xcdatamodeld */,
+				14DD45BD25F834470052D08C /* Assets.xcassets */,
+				14DD45C225F834470052D08C /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		14E17DFD25FB3A0800942111 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				14DD45B325F834470052D08C /* SceneDelegate.swift */,
+				14DD45BF25F834470052D08C /* LaunchScreen.storyboard */,
+				14DD45B125F834470052D08C /* AppDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -756,7 +892,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 292DGA5D4R;
-				INFOPLIST_FILE = KitaBisaSubmission/Info.plist;
+				INFOPLIST_FILE = KitaBisaSubmission/SupportingFIles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -775,7 +911,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 292DGA5D4R;
-				INFOPLIST_FILE = KitaBisaSubmission/Info.plist;
+				INFOPLIST_FILE = KitaBisaSubmission/SupportingFIles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
