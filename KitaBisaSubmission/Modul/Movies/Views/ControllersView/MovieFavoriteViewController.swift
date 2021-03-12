@@ -20,7 +20,7 @@ class MovieFavoriteViewController: UIViewController {
         super.viewDidLoad()
         
         favoriteViewModel = FavoriteViewModel(movieservice: CoreDataManager())
-        registerGamesListCell()
+        registerfavoritesListCell()
 
         self.TvListMovieFavorite.delegate = self
         self.TvListMovieFavorite.dataSource = self
@@ -66,7 +66,7 @@ extension MovieFavoriteViewController {
             case .initial:
                 break
                 
-            case .detailgames(let datamovie):
+            case .detailfavourites(let datamovie):
                 guard let vc =
                         UIStoryboard(name: "MovieDetails", bundle: Bundle.main).instantiateViewController(identifier: MovieDetailViewController.idMovieDetailnavigate) as? UINavigationController else {
                     fatalError("UINavigationController not found")
@@ -87,7 +87,7 @@ extension MovieFavoriteViewController {
 // MARK: - Helper
 extension MovieFavoriteViewController {
     
-    func registerGamesListCell() {
+    func registerfavoritesListCell() {
         
         let nibName = UINib(nibName: "MovieTableViewCell", bundle: nil)
         TvListMovieFavorite.register(nibName, forCellReuseIdentifier: MovieTableViewCell.idMovieTableViewCell)
@@ -110,7 +110,7 @@ extension MovieFavoriteViewController: UITableViewDelegate {
         
         let position = indexPath.row
         let vm = self.favoriteViewModel.list.value?[position]
-        self.favoriteViewModel.route.value = .detailgames(vm!)
+        self.favoriteViewModel.route.value = .detailfavourites(vm!)
         
     }
 }
@@ -136,7 +136,7 @@ extension MovieFavoriteViewController: UITableViewDataSource {
         let vm = self.favoriteViewModel.list.value?[indexPath.row]
         
         guard let cell = TvListMovieFavorite.dequeueReusableCell(withIdentifier: MovieTableViewCell.idMovieTableViewCell, for: indexPath) as? MovieTableViewCell else {
-            fatalError("GamesListViewTableViewCell not found")
+            fatalError("MovieFavoriteListViewTableViewCell not found")
         }
         
         cell.selectionStyle = .none

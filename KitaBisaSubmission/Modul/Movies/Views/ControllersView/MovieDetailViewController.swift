@@ -37,7 +37,7 @@ class MovieDetailViewController: UIViewController {
         
         observe()
         observeStatus()
-        registerGamesListCell()
+        registerDetailListCell()
         setinit()
         
         reviewlistViewModel.didload((moviedata?.id)!)
@@ -54,7 +54,7 @@ class MovieDetailViewController: UIViewController {
 // MARK: - Helper
 extension MovieDetailViewController {
     
-    private func registerGamesListCell() {
+    private func registerDetailListCell() {
         let nibName = UINib(nibName: "ReviewsTableViewCell", bundle: nil)
         TVReviewMovie.register(nibName, forCellReuseIdentifier: ReviewsTableViewCell.idReviewTableViewCell)
     }
@@ -130,7 +130,7 @@ extension MovieDetailViewController: UITableViewDataSource {
         let vm = self.reviewlistViewModel.list.value?[indexPath.row]
         
         guard let cell = TVReviewMovie.dequeueReusableCell(withIdentifier: ReviewsTableViewCell.idReviewTableViewCell, for: indexPath) as? ReviewsTableViewCell else {
-            fatalError("GamesListViewTableViewCell not found")
+            fatalError("MovieDetailViewTableViewCell not found")
         }
         
         cell.selectionStyle = .none

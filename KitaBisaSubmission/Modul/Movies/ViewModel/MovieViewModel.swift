@@ -10,7 +10,7 @@ import Foundation
 enum MovieViewModelsRoute {
     case initial
     case favorite
-    case detailgames(_ movie: Result)
+    case detailmovies(_ movie: Result)
     
 }
 

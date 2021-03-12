@@ -34,7 +34,7 @@ class MovieListViewController: UIViewController {
         
         observe()
         load("popular")
-        registerGamesListCell()
+        registerMovieListCell()
     }
     
 }
@@ -77,7 +77,7 @@ extension MovieListViewController {
                 
                 self.navigationController?.pushViewController(vcNavigate, animated: true)
                 
-            case .detailgames(let datamovie):
+            case .detailmovies(let datamovie) : 
                 guard let vc =
                         UIStoryboard(name: "MovieDetails", bundle: Bundle.main).instantiateViewController(identifier: MovieDetailViewController.idMovieDetailnavigate) as? UINavigationController else {
                     fatalError("UINavigationController not found")
@@ -99,7 +99,7 @@ extension MovieListViewController {
 // MARK: - Helper
 extension MovieListViewController {
     
-    func registerGamesListCell() {
+    func registerMovieListCell() {
         
         let nibName = UINib(nibName: "MovieTableViewCell", bundle: nil)
         TVListMovie.register(nibName, forCellReuseIdentifier: MovieTableViewCell.idMovieTableViewCell)
@@ -170,7 +170,7 @@ extension MovieListViewController: UITableViewDataSource {
         let vm = self.movielistViewModel.list.value?[indexPath.row]
         
         guard let cell = TVListMovie.dequeueReusableCell(withIdentifier: MovieTableViewCell.idMovieTableViewCell, for: indexPath) as? MovieTableViewCell else {
-            fatalError("GamesListViewTableViewCell not found")
+            fatalError("MovieListViewTableViewCell not found")
         }
         
         cell.selectionStyle = .none
@@ -189,7 +189,7 @@ extension MovieListViewController: UITableViewDelegate {
         
         let position = indexPath.row
         let vm = self.movielistViewModel.list.value?[position]
-        self.movielistViewModel.route.value = .detailgames(vm!)
+        self.movielistViewModel.route.value = .detailmovies(vm!)
         
     }
 }
