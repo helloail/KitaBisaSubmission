@@ -1,4 +1,5 @@
 # KitaBisaSubmission
 
 Architchtureb : MVVM,
-CI : Github Action
+CI : Github Action,
+no third party
