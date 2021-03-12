@@ -28,15 +28,20 @@ protocol MovieViewModelsoutput {
 protocol MovieViewModelProtocol: MovieViewModelsinput, MovieViewModelsoutput { }
 
 class MovieViewModel: MovieViewModelProtocol {
-    func didload(_ key: String) {
-        fetchData(key: key)
-    }
     
+    var list: Observable<[Result]?> = Observable([Result()])
+    var loading: Observable<Bool> = Observable(false)
+    var errorMessage: Observable<String?> = Observable(nil)
+    var route: Observable<MovieViewModelsRoute> = Observable(.initial)
     private var movieservice: MovieRemoteDataSourceProtocol
     
      init(movieservice: MovieRemoteDataSourceProtocol) {
         
         self.movieservice  = movieservice
+    }
+    
+    func didload(_ key: String) {
+        fetchData(key: key)
     }
     
     func fetchData(key: String) {
@@ -57,11 +62,4 @@ class MovieViewModel: MovieViewModelProtocol {
             self?.loading.value = false
         }
     }
-    var list: Observable<[Result]?> = Observable([Result()])
-    
-    var loading: Observable<Bool> = Observable(false)
-    
-    var errorMessage: Observable<String?> = Observable(nil)
-    
-    var route: Observable<MovieViewModelsRoute> = Observable(.initial)
 }

@@ -20,15 +20,20 @@ protocol ReviewViewModelsoutput {
 protocol ReviewViewModelProtocol: ReviewViewModelsinput, ReviewViewModelsoutput { }
 
 class ReviewViewModel: ReviewViewModelProtocol {
-    func didload(_ key: Int) {
-        fetchData(key: key)
-    }
+    
+    var list: Observable<[ReviewsResult]?> = Observable([ReviewsResult()])
+    var loading: Observable<Bool> = Observable(false)
+    var errorMessage: Observable<String?> = Observable(nil)
     
     private var reviewservice: ReviewsRemoteDataSourceProtocol
     
     init(reviewservice: ReviewsRemoteDataSourceProtocol) {
         
         self.reviewservice = reviewservice
+    }
+    
+    func didload(_ key: Int) {
+        fetchData(key: key)
     }
     
     func fetchData(key: Int) {
@@ -49,10 +54,4 @@ class ReviewViewModel: ReviewViewModelProtocol {
             self?.loading.value = false
         }
     }
-    var list: Observable<[ReviewsResult]?> = Observable([ReviewsResult()])
-    
-    var loading: Observable<Bool> = Observable(false)
-    
-    var errorMessage: Observable<String?> = Observable(nil)
-    
 }

@@ -20,19 +20,22 @@ protocol DetailViewModelProtocol: DetailViewModelsoutput, DetailViewModelsinput 
 
 class DetailViewModel: DetailViewModelProtocol {
     
-    func didload(_ result: Result) {
-        fetchData(result: result)
-    }
-    
+    var getstatus: Observable<Bool> = Observable(false)
     private var movieservice: CoreDataManagerProtocol
     
      init(movieservice: CoreDataManagerProtocol) {
         
         self.movieservice  = movieservice
     }
+    
+    func didload(_ result: Result) {
+        fetchData(result: result)
+    }
+    
     func updateStatus(_ result: Result) {
         self.movieservice.updateData(result: result)
     }
+    
     func fetchData(result: Result) {
         
         self.movieservice.fetchPartData(result: result) {[weak self] bool in
@@ -46,7 +49,5 @@ class DetailViewModel: DetailViewModelProtocol {
         }
 
     }
-    
-    var getstatus: Observable<Bool> = Observable(false)
     
 }

@@ -27,16 +27,20 @@ protocol FavoriteViewModelsoutput {
 protocol FavoriteViewModelProtocol: FavoriteViewModelsinput, FavoriteViewModelsoutput { }
 
 class FavoriteViewModel: FavoriteViewModelProtocol {
-   
-    func didload() {
-        fetchData()
-    }
     
+    var list: Observable<[Movie]?> = Observable([Movie()])
+    var loading: Observable<Bool> = Observable(false)
+    var errorMessage: Observable<String?> = Observable(nil)
+    var route: Observable<FavoriteViewModelsRoute> = Observable(.initial)
     private var movieservice: CoreDataManagerProtocol
     
      init(movieservice: CoreDataManagerProtocol) {
         
         self.movieservice = movieservice
+    }
+   
+    func didload() {
+        fetchData()
     }
     
     func fetchData() {
@@ -57,11 +61,4 @@ class FavoriteViewModel: FavoriteViewModelProtocol {
         }
     }
     
-    var list: Observable<[Movie]?> = Observable([Movie()])
-    
-    var loading: Observable<Bool> = Observable(false)
-    
-    var errorMessage: Observable<String?> = Observable(nil)
-    
-    var route: Observable<FavoriteViewModelsRoute> = Observable(.initial)
 }
