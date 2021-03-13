@@ -9,9 +9,22 @@ import XCTest
 
 @testable import KitaBisaSubmission
 class NoItemViewControllerTest: XCTestCase {
-
-    func testSetup() {
-      let controller = NoItemMovieViewController()
-      controller.viewDidLoad()
+    
+    func test_viewDidLoad_storyboardIdShouldNotNil() {
+        let controller = NoItemMovieViewController()
+        controller.loadView()
+        controller.viewDidLoad()
+        
+        XCTAssertNotNil(NoItemMovieViewController.idnoitemmovie)
+        XCTAssertNotNil(NoItemMovieViewController.idnoitemreview)
+    }
+    
+    func test_viewDidLoad_storyboardShouldInInitialState() {
+        
+        let controller = NoItemMovieViewController()
+        controller.viewDidLoad()
+        
+        XCTAssertEqual(NoItemMovieViewController.idnoitemmovie, "idnoitemmovie")
+        XCTAssertEqual(NoItemMovieViewController.idnoitemreview, "idnoitemreview")
     }
 }
